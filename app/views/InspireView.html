@@ -1,0 +1,39 @@
+<section class="container-fluid">
+
+  <div class="row justify-content-center">
+    <div class="col-4 mt-5">
+
+      <h3 class="text-center">To Do's</h3>
+      <div class="row">
+        <div class="col-12">
+          <div class="shadow px-3 py-2 rounded">
+
+            <!-- ANCHOR New ToDo form -->
+            <form onsubmit="app.ToDosController.makeNewToDo()" class="mt-2">
+              <div class="input-group mb-3">
+                <input name="description" type="text" class="form-control" placeholder="Add To Do"
+                  aria-label="Add To Do" required minlength="2" maxlength="500">
+                <button class="btn btn-outline-dark" type="submit"><i class="mdi mdi-plus"></i></button>
+              </div>
+            </form>
+
+            <!-- ANCHOR ToDo List -->
+            <div id="toDoList" class="row">
+              <!-- SECTION todo template draws here -->
+              <!-- <div class="col-12">
+                <div class="form-check d-flex align-items-center">
+                  <input class="form-check-input me-2" type="checkbox" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Don't Stink at Coding
+                  </label>
+                  <button class="btn btn-outline-danger ms-auto"><i class="mdi mdi-delete-forever"></i></button>
+                </div>
+              </div> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
