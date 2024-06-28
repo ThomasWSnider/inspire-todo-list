@@ -45,8 +45,9 @@ export class ToDosController {
 
   async destroyToDo(toDoId) {
     try {
-      const choice = Pop.confirm('Are you sure you wish to delete this item on your To Do List?')
-      if (!choice) return
+      const confirm = await Pop.confirm('Are you sure?', 'This item on your To Do List will be gone forever', 'Yes I am sure')
+      console.log(confirm);
+      if (!confirm) return
 
       await toDosService.destroyToDo(toDoId)
     } catch (error) {

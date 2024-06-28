@@ -24,10 +24,11 @@ class ToDosService {
     AppState.toDos.push(newToDo)
   }
 
-  destroyToDo(toDoId) {
-    const response = api.delete(`api/todos/${toDoId}`)
+  async destroyToDo(toDoId) {
+    const response = await api.delete(`api/todos/${toDoId}`)
     console.log('🪓 the todo', response.data);
-
+    const indexToDestroy = AppState.toDos.findIndex((todo) => toDoId == todo.id)
+    AppState.toDos.splice(indexToDestroy, 1)
   }
 
 }
