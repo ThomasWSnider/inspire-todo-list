@@ -7,8 +7,11 @@ class ToDosService {
     console.log('ToDosService is connected');
   }
 
-  getToDos() {
-
+  async getToDos() {
+    const response = await api.get('api/todos')
+    console.log('I have your to do list sir', response.data);
+    const myToDos = response.data.map((todoPOJO) => new ToDo(todoPOJO))
+    AppState.toDos = myToDos
   }
 
   async makeNewToDo(formData) {
@@ -21,6 +24,11 @@ class ToDosService {
     AppState.toDos.push(newToDo)
   }
 
+  destroyToDo(toDoId) {
+    const response = api.delete(`api/todos/${toDoId}`)
+    console.log('🪓 the todo', response.data);
+
+  }
 
 }
 

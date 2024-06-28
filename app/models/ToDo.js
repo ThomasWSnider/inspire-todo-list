@@ -2,7 +2,7 @@ export class ToDo {
   constructor(data) {
     this.description = data.description
     this.completed = data.completedS
-    this.creatorId = data.creatorId
+    this.id = data.id
   }
 
 
@@ -17,7 +17,7 @@ export class ToDo {
         <label class="form-check-label" for="flexCheckDefault">
           ${this.description}
         </label>
-        <button class="btn btn-outline-danger ms-auto"><i class="mdi mdi-delete-forever"></i></button>
+        <button onclick="app.ToDosController.destroyToDo('${this.id}')" class="btn btn-outline-danger ms-auto"><i class="mdi mdi-delete-forever"></i></button>
       </div>
     </div>
     `
