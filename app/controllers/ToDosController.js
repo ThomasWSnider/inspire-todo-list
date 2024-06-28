@@ -8,9 +8,20 @@ export class ToDosController {
   constructor() {
     console.log('ToDosController reporting');
     AppState.on('toDos', this.drawToDos)
+    AppState.on('toDos', this.drawToDoTotal)
     AppState.on('user', this.getToDos)
+    AppState.on('user', this.drawToDoContainer)
   }
 
+  drawToDoContainer() {
+    const toDoContainer = document.getElementById('toDoContainer')
+    toDoContainer.removeAttribute('hidden')
+  }
+  drawToDoTotal() {
+    const toDos = AppState.toDos
+    const uncompletedToDos = toDos.filter((toDo) => !toDo.completed)
+    setHTML('toDoNumber', uncompletedToDos.length)
+  }
 
   drawToDos() {
     const todos = AppState.toDos
@@ -33,6 +44,9 @@ export class ToDosController {
       event.preventDefault()
       const form = event.target
       const toDoData = getFormData(form)
+      debugger
+      toDoData.description = toDoData.description.trim()
+      if (toDoData.description == '') throw new Error('Task must have at least 3 characters')
       console.log('I have the todo data', toDoData);
       await toDosService.makeNewToDo(toDoData)
       // @ts-ignore
@@ -53,6 +67,15 @@ export class ToDosController {
     } catch (error) {
       Pop.error(error)
       console.error(error)
+    }
+  }
+
+  async toggleCompleteToDo(toDoId) {
+    try {
+      await toDosService.toggleCompleteToDo(toDoId)
+    } catch (error) {
+      Pop.error(error)
+      console.log(error);
     }
   }
 }

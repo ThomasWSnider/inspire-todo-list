@@ -24,6 +24,18 @@ class ToDosService {
     AppState.toDos.push(newToDo)
   }
 
+  async toggleCompleteToDo(toDoId) {
+    const toDoIndex = AppState.toDos.findIndex((toDo) => toDoId == toDo.id)
+    const foundToDo = AppState.toDos[toDoIndex]
+
+    const response = await api.put(`api/todos/${toDoId}`, { completed: !foundToDo.completed })
+    console.log('YOU FINISHED!', response.data);
+
+    const newToDo = new ToDo(response.data)
+
+    AppState.toDos.splice(toDoIndex, 1, newToDo)
+  }
+
   async destroyToDo(toDoId) {
     const response = await api.delete(`api/todos/${toDoId}`)
     console.log('🪓 the todo', response.data);
