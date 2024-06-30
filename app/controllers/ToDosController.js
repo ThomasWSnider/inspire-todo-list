@@ -44,7 +44,6 @@ export class ToDosController {
       event.preventDefault()
       const form = event.target
       const toDoData = getFormData(form)
-      debugger
       toDoData.description = toDoData.description.trim()
       if (toDoData.description == '') throw new Error('Task must have at least 3 characters')
       console.log('I have the todo data', toDoData);
