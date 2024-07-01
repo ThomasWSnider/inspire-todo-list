@@ -13,6 +13,8 @@ class QuotesService {
     AppState.quote = newQuote
     console.log(AppState.quote);
   }
+
+
 }
 
 export const quotesService = new QuotesService
