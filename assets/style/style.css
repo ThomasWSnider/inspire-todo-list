@@ -25,3 +25,8 @@
   filter: blur(0px);
   transition: all .5s linear;
 }
+
+.main-card {
+  background-color: rgba(20, 20, 20, 0.603);
+  color: rgb(223, 223, 223);
+}

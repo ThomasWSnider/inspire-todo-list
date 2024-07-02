@@ -1,4 +1,5 @@
 import { AccountController } from "./controllers/AccountController.js";
+import { ClocksController } from "./controllers/ClocksController.js";
 import { QuotesController } from "./controllers/QuotesController.js";
 import { ToDosController } from "./controllers/ToDosController.js";
 import { AuthGuard } from "./services/AuthService.js";
@@ -8,7 +9,7 @@ import { Router } from "./utils/Router.js";
 export const router = new Router([
   {
     path: '',
-    controllers: [ToDosController, QuotesController],
+    controllers: [ToDosController, QuotesController, ClocksController],
     view: `app/views/InspireView.html`
   },
   {
