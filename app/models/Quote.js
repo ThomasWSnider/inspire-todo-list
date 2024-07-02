@@ -8,8 +8,8 @@ export class Quote {
 
   get quoteHTMLTemplate() {
     return `
-<h2 class="mt-5 ms-3">"${this.content}"</h2>
-<p class="fs-5 text-end me-5">-${this.author}</p>
+<h2 class='mt-5 ms-3 page-quote'>"${this.content}"</h2>
+<p class="fs-5 text-end me-5 quote-author">-${this.author}</p>
     `
   }
 }
