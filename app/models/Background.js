@@ -6,4 +6,11 @@ export class Background {
     this.id = data._id
   }
 
+  get backgroundHTML() {
+    return `
+    <p class="mb-0">Image By:</p>
+    <p> ${this.author}</p>
+    `
+  }
+
 }
