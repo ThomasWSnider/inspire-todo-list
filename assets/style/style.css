@@ -20,13 +20,27 @@
   opacity: 10;
 }
 
+.text-readability {
+  text-shadow: 2px 2px 3px rgb(0, 0, 0);
+  color: whitesmoke;
+}
+
 .page-quote:hover+.quote-author {
   opacity: 1;
   filter: blur(0px);
   transition: all .5s linear;
 }
 
+.dark-glass {
+  background-color: rgba(8, 8, 8, 0.603);
+  backdrop-filter: blur(15px);
+}
+
 .main-card {
-  background-color: rgba(20, 20, 20, 0.603);
-  color: rgb(223, 223, 223);
+  background-color: rgba(8, 8, 8, 0.603);
+  backdrop-filter: blur(15px);
+}
+
+body {
+  background-size: cover;
 }

@@ -18,6 +18,7 @@ class BackgroundsService {
     const queries = AppState.queries
     const randomQueryInteger = Math.floor(Math.random() * queries.length)
     let randomQuery = queries[randomQueryInteger]
+    console.log(randomQuery);
     return randomQuery
   }
 

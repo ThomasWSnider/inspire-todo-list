@@ -16,7 +16,7 @@ export class ToDo {
         <label class="form-check-label ${this.completed ? 'text-decoration-line-through' : ''}" for="${this.id}CheckBox">
           ${this.description}
         </label>
-        <button onclick="app.ToDosController.destroyToDo('${this.id}')" class="btn btn-outline-danger ms-auto"><i class="mdi mdi-delete-forever"></i></button>
+        <button onclick="app.ToDosController.destroyToDo('${this.id}')" class="btn btn-outline-danger text-light ms-auto"><i class="mdi mdi-delete-forever"></i></button>
       </div>
     </div>
     `
