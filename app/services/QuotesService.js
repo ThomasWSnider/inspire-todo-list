@@ -11,7 +11,6 @@ class QuotesService {
     const response = await api.get('api/quotes')
     const newQuote = new Quote(response.data)
     AppState.quote = newQuote
-    console.log(AppState.quote);
   }
 
 
