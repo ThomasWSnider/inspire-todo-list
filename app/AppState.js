@@ -1,6 +1,7 @@
 import { Background } from "./models/Background.js"
 import { Quote } from "./models/Quote.js"
 import { ToDo } from "./models/ToDo.js"
+import { Weather } from "./models/Weather.js"
 import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
 
@@ -15,6 +16,9 @@ class ObservableAppState extends EventEmitter {
 
   /**@type {Quote} */
   quote = null
+
+  /**@type {Weather} */
+  weather = null
 
   /**@type {Background} */
   background = null

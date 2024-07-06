@@ -11,7 +11,6 @@ class BackgroundsService {
     const response = await api.get(`api/images?category=${this.getRandomQuery()}`)
     const newBackground = new Background(response.data)
     AppState.background = newBackground
-    console.log(AppState.background);
   }
 
   getRandomQuery() {

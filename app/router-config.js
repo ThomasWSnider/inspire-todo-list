@@ -5,12 +5,13 @@ import { QuotesController } from "./controllers/QuotesController.js";
 import { ToDosController } from "./controllers/ToDosController.js";
 import { AuthGuard } from "./services/AuthService.js";
 import { Router } from "./utils/Router.js";
+import { WeathersController } from "./controllers/WeathersController.js";
 
 
 export const router = new Router([
   {
     path: '',
-    controllers: [ToDosController, QuotesController, ClocksController, BackgroundsController],
+    controllers: [ToDosController, QuotesController, ClocksController, BackgroundsController, WeathersController],
     view: `app/views/InspireView.html`
   },
   {
