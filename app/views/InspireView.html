@@ -8,39 +8,83 @@
 <section class="container-fluid">
 
 
-  <div class="row justify-content-around align-items-end">
-
-    <div id="pageQuote" class="col-8 page-quote text-readability">
-      <!-- <h2 class="mt-5 ms-3">A Quote</h2>
-          <p class="fs-5 text-end me-5">-<span>Author</span></p> -->
-    </div>
-
+  <div class="row justify-content-end">
 
     <div id="toDoContainer" class="col-md-3 col-8 mt-3" hidden>
-      <div class="shadow px-3 py-2 rounded dark-glass  text-readability">
-        <div class="d-flex text-readability">
+      <div class="shadow px-3 py-2 rounded dark-glass text-readability">
+        <div class="d-flex text-readability align-items-center">
+          <button class="btn btn-outline-light" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"><i
+              class="mdi mdi-arrow-left"></i></button>
           <h4 class="text-start me-auto ps-2">Tasks Remaining: </h4>
-          <h4 id="toDoNumber" class="text-end pe-2 me-auto">0</h4>
+          <h4 id="toDoNumberA" class="text-end me-auto pe-2">0</h4>
         </div>
 
 
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="container fixed-bottom">
+  <div class="row">
+    <div class="col-12">
+
+      <div id="pageQuote" class="col-8 page-quote text-readability text-center">
+        <!-- <h2 class="mt-5 ms-3">A Quote</h2>
+          <p class="fs-5 text-end me-5">-<span>Author</span></p> -->
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12">
         <div class="row">
-          <div class="col-12">
-            <div>
+          <div class="main-card d-flex rounded-pill justify-content-around mb-3 mt-5 text-readability">
+            <div class="col-6">
+              <div>
+                <p id="timeClock" class="display-2">5:30 PM</p>
+              </div>
+            </div>
+            <div class="col-2 d-flex align-items-center">
+              <div id="weatherCard" class="weather-card d-flex rounded w-100 justify-content-between"
+                onclick="app.WeathersController.toggleTempDisplay()">
+                <!-- <div>
+                <p>20° F</p>
+                <p>Cloudy</p>
+              </div>
+              <img src="" alt="Weather Icon"> -->
+              </div>
+            </div>
 
-              <!-- ANCHOR New ToDo form -->
-              <form onsubmit="app.ToDosController.makeNewToDo()" class="mt-2">
-                <div class="input-group mb-3">
-                  <input name="description" type="text" class="form-control" placeholder="Add Task"
-                    aria-label="Add Task" required minlength="3" maxlength="500">
-                  <button class="btn btn-outline-light" type="submit"><i class="mdi mdi-plus"></i></button>
-                </div>
-              </form>
 
-              <!-- ANCHOR ToDo List -->
-              <div id="toDoList" class="row">
-                <!-- SECTION todo template draws here -->
-                <!-- <div class="col-12">
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<div class="offcanvas offcanvas-end dark-glass text-readability" tabindex="-1" id="offcanvasRight"
+  aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h4 class="text-start me-auto ps-2">Tasks Remaining: </h4>
+    <h4 id="toDoNumberB" class="text-end me-auto pe-2">0</h4>
+
+    <button id="offCanvasClose" type="button" class="btn btn-outline-light" data-bs-dismiss="offcanvas"
+      aria-label="Close"><i class="mdi mdi-close"></i></button>
+  </div>
+  <div class="offcanvas-body">
+    <form onsubmit="app.ToDosController.makeNewToDo()" class="mt-2">
+      <div class="input-group mb-3">
+        <input name="description" type="text" class="form-control" placeholder="Add Task" aria-label="Add Task" required
+          minlength="3" maxlength="500">
+        <button class="btn btn-outline-light" type="submit"><i class="mdi mdi-plus"></i></button>
+      </div>
+    </form>
+    <!-- ANCHOR ToDo List -->
+    <div id="toDoList" class="row">
+      <!-- SECTION todo template draws here -->
+      <!-- <div class="col-12">
                   <div class="form-check d-flex align-items-center">
                     <input class="form-check-input me-2" type="checkbox" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
@@ -49,39 +93,6 @@
                     <button class="btn btn-outline-danger ms-auto"><i class="mdi mdi-delete-forever"></i></button>
                   </div>
                 </div> -->
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
-</section>
-
-<section class="container fixed-bottom">
-  <div class="row justify-content-center">
-    <div class="col-12">
-      <div class="row">
-        <div class="main-card d-flex rounded-pill justify-content-around mb-3 mt-5 text-readability">
-          <div class="col-6">
-            <div>
-              <p id="timeClock" class="display-2">5:30 PM</p>
-            </div>
-          </div>
-          <div class="col-2 d-flex align-items-center">
-            <div id="weatherCard" class="weather-card d-flex rounded">
-              <!-- <div>
-                <p>20° F</p>
-                <p>Cloudy</p>
-              </div>
-              <img src="" alt="Weather Icon"> -->
-            </div>
-          </div>
-
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+</div>

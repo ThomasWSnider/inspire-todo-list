@@ -20,7 +20,8 @@ export class ToDosController {
   drawToDoTotal() {
     const toDos = AppState.toDos
     const uncompletedToDos = toDos.filter((toDo) => !toDo.completed)
-    setHTML('toDoNumber', uncompletedToDos.length)
+    setHTML('toDoNumberA', uncompletedToDos.length)
+    setHTML('toDoNumberB', uncompletedToDos.length)
   }
 
   drawToDos() {

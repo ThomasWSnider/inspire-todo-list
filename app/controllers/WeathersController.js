@@ -23,4 +23,8 @@ export class WeathersController {
     let weather = AppState.weather
     setHTML('weatherCard', weather.weatherCardHTML)
   }
+
+  toggleTempDisplay() {
+    weathersService.toggleTempDisplay()
+  }
 }
