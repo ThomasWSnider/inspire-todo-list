@@ -31,6 +31,13 @@
   transition: all .5s linear;
 }
 
+.weather-card {
+  background-color: black;
+  border: 2px solid white;
+  color: white;
+  height: 70%;
+}
+
 .dark-glass {
   background-color: rgba(8, 8, 8, 0.603);
   backdrop-filter: blur(15px);
